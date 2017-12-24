@@ -1,0 +1,17 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "choppydb": {
+    "host": "db",
+    "port": 5432,
+    "url": "postgres://choppy:choppy@db:5432/choppydb?ssl=false",
+    "database": "choppydb",
+    "password": "choppy",
+    "name": "choppydb",
+    "connector": "postgresql",
+    "user": "admin",
+    "ssl": false
+  }
+}
