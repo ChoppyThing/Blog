@@ -1,0 +1,42 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "choppydb"
+  },
+  "AccessToken": {
+    "dataSource": "choppydb",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "choppydb",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "choppydb",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "choppydb",
+    "public": false
+  },
+  "Post": {
+    "dataSource": "choppydb",
+    "public": true
+  }
+}
