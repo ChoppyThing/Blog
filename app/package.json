@@ -1,0 +1,15 @@
+{
+  "name": "choppy-blog",
+  "version": "1.0.0",
+  "description": "Node.js app for Choppy",
+  "author": "Choppy Thing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "loopback-cli": "^4.0.0",
+    "loopback-connector-postgresql": "^3.2.0",
+    "nodemon": "^1.12.1"
+  }
+}

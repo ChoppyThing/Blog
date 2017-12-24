@@ -1,0 +1,16 @@
+.left-menu .ui.grid .item a {
+    display: inline-block;
+    width: 100%;
+}
+
+.main {
+    width: 85%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+.main .rdw-editor-main {
+    padding: 10px;
+    min-height: 150px;
+}

@@ -1,0 +1,13 @@
+.post {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post .title {
+    font-size: 20px;
+}
+
+.post .text {
+    font-size: 16px;
+    margin-top: 10px;
+}
