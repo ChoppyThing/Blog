@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getPosts } from '../../../modules/posts';
 import { Link } from 'react-router-dom';
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
 
 class Pagination extends React.Component {
@@ -20,7 +20,7 @@ class Pagination extends React.Component {
     ;
 
     if (this.props.page < (this.props.total / this.props.perPage)) {
-      let url = '/page/' + (parseInt(this.props.page) + 1);
+      let url = '/page/' + (parseInt(this.props.page, 10) + 1);
       before = (
         <Link className="page" to={url}>
           <Button basic color='teal'>Precedent</Button>
@@ -28,8 +28,8 @@ class Pagination extends React.Component {
       )
     }
 
-    if (this.props.page != 1) {
-      let url = '/page/' + (parseInt(this.props.page) - 1);
+    if (parseInt(this.props.page, 10) !== 1) {
+      let url = '/page/' + (parseInt(this.props.page, 10) - 1);
       next = (
         <Link className="page" to={url}>
           <Button basic color='teal'>Suivant</Button>

@@ -7,13 +7,25 @@
     "validateUpsert": true
   },
   "properties": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Post": {
+    "post": {
       "type": "string",
       "required": true
+    },
+    "createDate": {
+      "type": "date",
+      "required": true
+    },
+    "updateDate": {
+      "type": "date",
+      "required": true
+    },
+    "deleteDate": {
+      "type": "date",
+      "required": false
     }
   },
   "validations": [],

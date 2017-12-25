@@ -1,0 +1,7 @@
+i.delete {
+    cursor: pointer;
+}
+
+.deleted {
+    text-decoration: line-through;
+}

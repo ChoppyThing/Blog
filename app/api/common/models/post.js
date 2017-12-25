@@ -11,10 +11,14 @@ module.exports = function(Post) {
     let post = null;
     let count = null;
     let response;
-    
+
     async.parallel([
       (callback) => {
-        Post.find({skip: from, limit: LIMIT}, function (err, postList) {
+        Post.find({
+          where: {deleteDate: null},
+          skip: from,
+          limit: LIMIT
+        }, function (err, postList) {
           posts = postList;
           callback();
         });
@@ -53,6 +57,46 @@ module.exports = function(Post) {
       },
       returns: {
         arg: 'posts',
+        type: 'array'
+      }
+    }
+  );
+
+
+  /**
+   * DELETE post
+   */
+  Post.removePost = function(id, cb) {
+    let currentDate = new Date();
+    let postId = id;
+
+    Post.findOne({where: {id: postId}}, function (err, post) {
+      post.updateAttribute('deleteDate', new Date(), () => {
+        let response = {
+          "success": true,
+          "id": id
+        };
+
+        cb(null, response);
+      });
+    });
+  };
+
+  Post.remoteMethod(
+    'removePost', {
+      http: {
+        path: '/remove',
+        verb: 'delete'
+      },
+      accepts: {
+        arg: 'id',
+        type: 'string',
+        http: {
+          source: 'query'
+        }
+      },
+      returns: {
+        arg: 'post',
         type: 'array'
       }
     }

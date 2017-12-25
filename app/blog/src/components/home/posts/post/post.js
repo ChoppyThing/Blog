@@ -9,14 +9,13 @@ import './post.css';
 class Post extends React.Component {
   render() {
     let posts = this.props.posts.posts ? this.props.posts.posts : [];
-    let ids = [];
     return ( 
       <div>
         {posts.map(post => {
           return(
             <div className="post" key={post.id}> {post.id/*tobedeleted*/}
-              <Title title={post.Title} />
-              <Text text={post.Post} />
+              <Title title={post.title} />
+              <Text text={post.post} />
             </div>
           )
         })}

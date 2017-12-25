@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { logout } from './modules/user'
@@ -13,10 +13,8 @@ import 'semantic-ui-css/semantic.min.css';
 import Home from './components/home';
 import Login from './components/login';
 import Admin from './components/admin';
-//import Posts from './components/admin/posts';
 
 import './App.css';
-import store from './store';
 
 class App extends Component {
   render() {

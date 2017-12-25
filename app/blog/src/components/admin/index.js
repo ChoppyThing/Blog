@@ -8,8 +8,11 @@ import { Icon, Menu } from 'semantic-ui-react'
 import { PrivateRoute } from '../../utils/PrivateRoute';
 import Links from './links';
 import Calendar from './calendar';
+import AdminPostList from './posts/list';
 import NewPost from './posts/new';
+import EditPost from './posts/edit';
 import Files from './files';
+import { Button } from 'semantic-ui-react';
 
 import './admin.css';
 
@@ -26,9 +29,8 @@ class Admin extends React.Component {
             <Grid.Row>
               <Grid.Column width={2}>
                 <Menu compact icon='labeled' vertical>
-                  <Menu.Item name='post' active={activeItem === '/admin/posts/new'}>
-                    
-                    <Link to="/admin/posts/new">
+                  <Menu.Item name='post' active={activeItem === '/admin/posts/list'}>
+                    <Link to="/admin/posts/list">
                       <Icon name='mail outline' /><br />
                       Postes
                     </Link>
@@ -59,7 +61,9 @@ class Admin extends React.Component {
 
               <Grid.Column width={14}>
                 <div className="main">
+                  <PrivateRoute path="/admin/posts/list" component={AdminPostList} />
                   <PrivateRoute path="/admin/posts/new" component={NewPost} />
+                  <PrivateRoute path="/admin/posts/edit/:postId" component={EditPost} />
                   <PrivateRoute path="/admin/links" component={Links} />
                   <PrivateRoute path="/admin/calendar" component={Calendar} />
                   <PrivateRoute path="/admin/files" component={Files} />
