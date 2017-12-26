@@ -18,6 +18,18 @@ WORKDIR /app
 #COPY package*.json ./
 
 RUN npm install --quiet
+RUN npm install forever -g
+
+WORKDIR /app/api
+RUN npm install --only=production --quiet
+
+WORKDIR /app/blog
+RUN npm install --quiet
+
+WORKDIR /app
+
+#RUN chmod 744 start.sh
+RUN ls
 #RUN npm install -g loopback-cli
 # If you are building your code for production
 # RUN npm install --only=production
@@ -28,4 +40,5 @@ RUN npm install --quiet
 # CMD [ "./node_modules/.bin/nodemon", "server.js" ]
 #WORKDIR /app/react-boilerplate
 CMD [ "npm", "start" ]
+
 #WORKDIR /app
