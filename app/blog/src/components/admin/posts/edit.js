@@ -30,14 +30,14 @@ class EditPost extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.state.title === '') {
       let post = this.props.editPost;
-      const contentBlock = htmlToDraft(post.Post);
+      const contentBlock = htmlToDraft(post.post);
 
       if (contentBlock) {
         const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
         const editorState = EditorState.createWithContent(contentState);
 
         this.setState({
-          title: post.Title,
+          title: post.title,
           editorState: editorState
         });
       }
