@@ -24,7 +24,7 @@ module.exports = function(Post) {
         });
       },
       (callback) => {
-        Post.find({}, function (err, posts) {
+        Post.find({where: {deleteDate: null}}, function (err, posts) {
           count = posts.length;
           callback();
         });

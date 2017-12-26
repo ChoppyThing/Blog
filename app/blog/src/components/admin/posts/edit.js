@@ -92,7 +92,8 @@ class EditPost extends React.Component {
           onClick={() => this.props.updatePost(
             this.state.title,
             draftToHtml(convertToRaw(editorState.getCurrentContent())),
-            this.props.editPost.id
+            this.props.editPost.id,
+            this.props.editPost
           )}
         />
       </div>

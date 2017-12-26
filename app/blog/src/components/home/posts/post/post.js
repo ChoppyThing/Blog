@@ -13,7 +13,7 @@ class Post extends React.Component {
       <div>
         {posts.map(post => {
           return(
-            <div className="post" key={post.id}> {post.id/*tobedeleted*/}
+            <div className="post" style={{width: '100%'}} key={post.id}> {post.id/*tobedeleted*/}
               <Title title={post.title} />
               <Text text={post.post} />
             </div>

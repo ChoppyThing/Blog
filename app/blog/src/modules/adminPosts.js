@@ -103,11 +103,12 @@ export const createPosts = (title, text) => {
   }
 }
 
-export const updatePost = (title, text, id) => {
+export const updatePost = (title, text, id, originalPost) => {
   let post = {
     "title": title,
     "post": text,
     "id": id,
+    "createDate": originalPost.createDate,
     "updateDate": new Date(),
   };
 
